@@ -1,0 +1,67 @@
+.title-navbar {
+  margin-left: 25px !important;
+}
+.navbar-menu {
+  margin-right: 25px !important;
+}
+.img-nav {
+  position: absolute;
+  margin-left: 3px;
+}
+a.navbar-item p {
+  transition: all 0.3s !important;
+}
+a.navbar-item:hover p {
+  color: #48c78e !important;
+}
+
+.my-hero {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.my-hero-child {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.hero-image {
+  width: 420px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.hero-title {
+  line-height: 55px !important;
+}
+
+.tile-service {
+  position: relative;
+  margin-top: -40px !important;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero-image {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 1120px) {
+  .hero-image {
+    width: 280px;
+  }
+  .hero-title {
+    font-size: 45px !important;
+  }
+}
+@media only screen and (max-width: 1010px) {
+  .hero-image {
+    display: none;
+  }
+  .title-navbar {
+    margin-left: 5px !important;
+  }
+}

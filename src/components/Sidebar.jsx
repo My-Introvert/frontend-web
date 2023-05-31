@@ -27,7 +27,7 @@ const Sidebar = () => {
           </li>
           <li>
             <NavLink to={"/notes"}>
-              <IoBook /> Catatan Harian
+              <IoBook /> Catatan
             </NavLink>
           </li>
         </ul>

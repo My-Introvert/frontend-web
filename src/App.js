@@ -7,15 +7,21 @@ import AddUser from "./pages/AddUser";
 import EditUser from "./pages/EditUser";
 import AddNote from "./pages/AddNote";
 import EditNote from "./pages/EditNote";
+import Profile from "./pages/Profile";
+
+// Homepage
+import Landing from "./pages/homepage/Landing";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/users/:id" element={<Profile />} />
           <Route path="/users/add" element={<AddUser />} />
           <Route path="/users/edit/:id" element={<EditUser />} />
           <Route path="/notes" element={<Notes />} />
