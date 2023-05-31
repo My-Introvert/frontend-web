@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { IoArrowUndoSharp } from "react-icons/io5";
+import { IoArrowUndoSharp, IoDuplicate } from "react-icons/io5";
 
 const FormAddUser = () => {
+  const [file, setFile] = useState("");
+  const [preview, setPreview] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,14 +17,19 @@ const FormAddUser = () => {
 
   const saveUser = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("firstName", firstName);
+    formData.append("lastName", lastName);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("confPassword", confPassword);
+    formData.append("role", role);
     try {
-      await axios.post("http://localhost:5000/user", {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-        confPassword: confPassword,
-        role: role,
+      await axios.post("http://localhost:5000/user", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       navigate("/users");
     } catch (error) {
@@ -30,6 +37,12 @@ const FormAddUser = () => {
         setMsg(error.response.data.msg);
       }
     }
+  };
+
+  const loadImage = (e) => {
+    const image = e.target.files[0];
+    setFile(image);
+    setPreview(URL.createObjectURL(image));
   };
 
   return (
@@ -46,6 +59,26 @@ const FormAddUser = () => {
           <div className="content">
             <form onSubmit={saveUser}>
               <p className="has-text-centered has-text-danger">{msg}</p>
+              <div class="file mb-5">
+                <label class="file-label">
+                  <input class="file-input" type="file" onChange={loadImage} />
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <IoDuplicate />
+                    </span>
+                    <span class="file-label">Pilih Foto Profil</span>
+                  </span>
+                </label>
+              </div>
+
+              {preview ? (
+                <figure className="image is-128x128">
+                  <img src={preview} alt="Preview" style={{ marginLeft: "-55px" }} />
+                </figure>
+              ) : (
+                ""
+              )}
+
               <div className="field">
                 <label className="label">Nama Depan</label>
                 <div className="control">
@@ -81,6 +114,7 @@ const FormAddUser = () => {
                 <div className="control">
                   <div className="select is-fullwidth">
                     <select value={role} onChange={(e) => setRole(e.target.value)}>
+                      <option value="choose">-- Pilih --</option>
                       <option value="admin">Admin</option>
                       <option value="editor">Editor</option>
                       <option value="user">User</option>

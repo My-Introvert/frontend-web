@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { IoAdd, IoPencil, IoTrash } from "react-icons/io5";
+import { IoDuplicate, IoPencil, IoTrash } from "react-icons/io5";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -25,12 +25,13 @@ const UserList = () => {
       <h1 className="title">Pengguna</h1>
       <h2 className="subtitle">Daftar Pengguna</h2>
       <Link to={"/users/add"} className="button is-success mb-3">
-        <IoAdd /> Tambah Baru
+        <IoDuplicate /> &nbsp; Tambah Baru
       </Link>
       <table className="table is-striped is-fullwidth">
         <thead>
           <tr>
             <th>No.</th>
+            <th>Gambar</th>
             <th>Nama</th>
             <th>Surel</th>
             <th>Peran</th>
@@ -41,6 +42,9 @@ const UserList = () => {
           {users.map((user, index) => (
             <tr key={user.uuid}>
               <td>{index + 1}</td>
+              <td>
+                <img className="image is-48x48" src={user.urlImage} alt="Profile" />
+              </td>
               <td>{user.firstName + " " + user.lastName}</td>
               <td>{user.email}</td>
               <td>

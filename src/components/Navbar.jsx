@@ -4,7 +4,6 @@ import logo from "../assets/logo.png";
 import { IoLogOut } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
-import userImageDefault from "../assets/user-default.png";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -38,7 +37,7 @@ const Navbar = () => {
                 <button className="button is-white navbar-link">{user && user.firstName + " " + user.lastName}</button>
                 <div className="navbar-dropdown">
                   <a href="/me" className="navbar-item">
-                    <img src={userImageDefault} alt="Profil" /> &nbsp; Profil Saya
+                    <img src={user && user.urlImage} alt="Profil" /> &nbsp; Profil Saya
                   </a>
                   <hr className="navbar-divider" />
                   <button className="button is-white is-fullwidth" onClick={Logout}>

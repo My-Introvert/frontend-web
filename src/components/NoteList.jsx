@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { IoAdd, IoPencil, IoTrash } from "react-icons/io5";
+import { IoDuplicate, IoPencil, IoTrash } from "react-icons/io5";
 
 const NoteList = () => {
   const [notes, setNotes] = useState([]);
@@ -25,7 +25,7 @@ const NoteList = () => {
       <h1 className="title">Catatan</h1>
       <h2 className="subtitle">Daftar Catatan</h2>
       <Link to={"/notes/add"} className="button is-success mb-3">
-        <IoAdd /> Tambah Baru
+        <IoDuplicate /> &nbsp; Tambah Baru
       </Link>
       <table className="table is-striped is-fullwidth">
         <thead>
