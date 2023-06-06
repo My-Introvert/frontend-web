@@ -11,12 +11,14 @@ const UserList = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:5000/users");
+    // Get Endpoint /users
+    const response = await axios.get(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_USERS);
     setUsers(response.data);
   };
 
   const deleteUser = async (userId) => {
-    await axios.delete(`http://localhost:5000/user/${userId}`);
+    // Get Endpoint /users
+    await axios.delete(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_USERS + "/" + userId);
     getUsers();
   };
 

@@ -8,8 +8,9 @@ const PageProfile = () => {
     getInfoUser();
   }, []);
 
+  // Get Endpoint /me
   const getInfoUser = async () => {
-    const response = await axios.get("http://localhost:5000/me");
+    const response = await axios.get(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_ME);
     setUser(response.data);
   };
 

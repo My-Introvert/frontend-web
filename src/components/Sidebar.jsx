@@ -5,6 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
 
 const Sidebar = () => {
+  // Active Menu
+  const activeMenu = "is-active";
+  const normalMenu = "";
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
@@ -21,12 +25,12 @@ const Sidebar = () => {
         <p className="menu-label">Umum</p>
         <ul className="menu-list">
           <li>
-            <NavLink to={"/dashboard"}>
+            <NavLink to={"/dashboard"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
               <IoHome /> Dasbor
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/notes"}>
+            <NavLink to={"/notes"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
               <IoBook /> Catatan
             </NavLink>
           </li>
@@ -38,7 +42,7 @@ const Sidebar = () => {
             <p className="menu-label">Admin</p>
             <ul className="menu-list">
               <li>
-                <NavLink to={"/users"}>
+                <NavLink to={"/users"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
                   <IoPerson /> Pengguna
                 </NavLink>
               </li>

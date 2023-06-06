@@ -11,12 +11,14 @@ const NoteList = () => {
   }, []);
 
   const getNotes = async () => {
-    const response = await axios.get("http://localhost:5000/notes");
+    // Get Endpoint /notes
+    const response = await axios.get(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_NOTES);
     setNotes(response.data);
   };
 
   const deleteNote = async (noteId) => {
-    await axios.delete(`http://localhost:5000/note/${noteId}`);
+    // Get Endpoint /notes
+    await axios.delete(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_NOTES + "/" + noteId);
     getNotes();
   };
 

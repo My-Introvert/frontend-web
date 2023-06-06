@@ -19,7 +19,8 @@ const FormEditUser = () => {
   useEffect(() => {
     const getUserById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/user/${id}`);
+        // Get Endpoint /users
+        const response = await axios.get(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_USERS + "/" + id);
         setFile(response.data.image);
         setPreview(response.data.urlImage);
         setFirstName(response.data.firstName);
@@ -46,7 +47,8 @@ const FormEditUser = () => {
     formData.append("confPassword", confPassword);
     formData.append("role", role);
     try {
-      await axios.patch(`http://localhost:5000/user/${id}`, formData, {
+      // Get Endpoint /users
+      await axios.patch(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_USERS + "/" + id, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

@@ -26,7 +26,8 @@ const FormAddUser = () => {
     formData.append("confPassword", confPassword);
     formData.append("role", role);
     try {
-      await axios.post("http://localhost:5000/user", formData, {
+      // Get Endpoint /users
+      await axios.post(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_USERS, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

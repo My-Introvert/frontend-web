@@ -12,7 +12,8 @@ const FormEditNote = () => {
   useEffect(() => {
     const getNoteById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/note/${id}`);
+        // Get Endpoint /notes
+        const response = await axios.get(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_NOTES + "/" + id);
         setTitle(response.data.title);
         setSumarry(response.data.sumarry);
       } catch (error) {
@@ -27,7 +28,8 @@ const FormEditNote = () => {
   const updateNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/note/${id}`, {
+      // Get Endpoint /notes
+      await axios.patch(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_NOTES + "/" + id, {
         title: title,
         sumarry: sumarry,
       });

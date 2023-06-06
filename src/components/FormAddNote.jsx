@@ -9,10 +9,11 @@ const FormAddNote = () => {
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
+  // Get Endpoint /notes
   const saveNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/note", {
+      await axios.post(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_NOTES, {
         title: title,
         sumarry: sumarry,
       });

@@ -9,9 +9,10 @@ const initialState = {
   message: "",
 };
 
+// Get Endpoint /login
 export const LoginUser = createAsyncThunk("user/LoginUser", async (user, thunkAPI) => {
   try {
-    const response = await axios.post("http://localhost:5000/login", {
+    const response = await axios.post(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_LOGIN, {
       email: user.email,
       password: user.password,
     });
@@ -24,9 +25,10 @@ export const LoginUser = createAsyncThunk("user/LoginUser", async (user, thunkAP
   }
 });
 
+// Get Endpoint /me
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
   try {
-    const response = await axios.get("http://localhost:5000/me");
+    const response = await axios.get(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_ME);
     return response.data;
   } catch (error) {
     if (error.message) {
@@ -36,8 +38,9 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
   }
 });
 
+// Get Endpoint /logout
 export const LogOut = createAsyncThunk("user/LogOut", async () => {
-  await axios.delete("http://localhost:5000/logout");
+  await axios.delete(process.env.REACT_APP_API_URL + process.env.REACT_APP_ENDPOINT_LOGOUT);
 });
 
 export const authSlice = createSlice({
