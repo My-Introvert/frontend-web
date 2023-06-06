@@ -11,6 +11,10 @@ import Profile from "./pages/Profile";
 
 // Homepage
 import Landing from "./pages/homepage/Landing";
+import Dasbor from "./pages/homepage/Dashboard";
+import About from "./pages/homepage/About";
+import News from "./pages/homepage/News";
+import Contact from "./pages/homepage/Contact";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/dasbor" element={<Dasbor />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />

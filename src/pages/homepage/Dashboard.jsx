@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import Layout from "./Layout";
-import FormAddUser from "../components/FormAddUser";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../features/authSlice";
+import { getMe } from "../../features/authSlice";
+import Layout from "./Layout";
+import Cover from "../../components/homepage/CoverProfile";
+import Notes from "../../components/homepage/NotesUser";
 
-const AddUser = () => {
+const Dashboard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError, user } = useSelector((state) => state.auth);
@@ -16,9 +17,9 @@ const AddUser = () => {
 
   useEffect(() => {
     if (isError) {
-      navigate("/login");
+      navigate("/");
     }
-    if (user && user.role !== "admin") {
+    if ((user && user.role === "admin") || (user && user.role === "editor")) {
       navigate("/dashboard");
     }
     if (user && user.role === "user") {
@@ -27,10 +28,13 @@ const AddUser = () => {
   }, [isError, user, navigate]);
 
   return (
-    <Layout>
-      <FormAddUser />
-    </Layout>
+    <div>
+      <Layout>
+        <Cover />
+        <Notes />
+      </Layout>
+    </div>
   );
 };
 
-export default AddUser;
+export default Dashboard;

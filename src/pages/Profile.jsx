@@ -18,6 +18,9 @@ const Profile = () => {
     if (isError) {
       navigate("/login");
     }
+    if (user && user.role === "user") {
+      navigate("/dasbor");
+    }
   }, [isError, user, navigate]);
 
   return (

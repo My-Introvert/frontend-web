@@ -3,11 +3,14 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer class="footer">
+      <footer className="top-footer">
         <div class="content has-text-centered">
           <p>
-            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            Dibuat dengan <span className="heart-footer">&#10084;</span> oleh{" "}
+            <a href="https://github.com/My-Introvert">
+              <strong>MY INTROVERT</strong>
+            </a>{" "}
+            | Copyright <strong>&copy; 2023 - {new Date().getFullYear()}</strong> All rights reserved.
           </p>
         </div>
       </footer>

@@ -1,7 +1,7 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { IoLogOut } from "react-icons/io5";
+import { IoLogOut, IoEarth } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
 
@@ -13,7 +13,11 @@ const Navbar = () => {
   const Logout = () => {
     dispatch(LogOut());
     dispatch(reset());
-    navigate("/login");
+    if (user.role === "admin" || user.role === "editor") {
+      navigate("/login");
+    } else {
+      navigate("/");
+    }
   };
 
   return (
@@ -24,7 +28,7 @@ const Navbar = () => {
             <img src={logo} alt="Logo" width="112" height="28" />
           </NavLink>
 
-          <a href="!#" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -33,6 +37,9 @@ const Navbar = () => {
 
         <div class="navbar-end">
           <div class="navbar-item">
+            <Link to={"/"} className="navbar-item" title="Homepage">
+              <IoEarth />
+            </Link>
             <div className="navbar-item has-dropdown is-hoverable">
               <button className="button is-white navbar-link">{user && user.firstName + " " + user.lastName}</button>
               <div className="navbar-dropdown">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { LoginUser, reset } from "../features/authSlice";
 
 const Login = () => {
@@ -12,7 +12,11 @@ const Login = () => {
 
   useEffect(() => {
     if (user || isSuccess) {
-      navigate("/dashboard");
+      if (user.role === "admin" || user.role === "editor") {
+        navigate("/dashboard");
+      } else {
+        navigate("/dasbor");
+      }
     }
     dispatch(reset());
   }, [user, isSuccess, dispatch, navigate]);
@@ -27,7 +31,7 @@ const Login = () => {
       <div className="hero-body">
         <div className="container">
           <div className="columns is-centered">
-            <div className="column is-4">
+            <div className="column is-5">
               <form onSubmit={Auth} className="box">
                 <h1 className="title is-3 has-text-centered">Silahkan Masuk</h1>
                 <hr class="navbar-divider" />
@@ -44,10 +48,32 @@ const Login = () => {
                   </div>
                 </div>
                 {isError && <p className="has-text-centered has-text-danger">{message}</p>}
-                <div className="field mt-5">
+                <div className="field mt-5 has-text-centered">
                   <button type="submit" className="button is-success is-fullwidth">
                     {isLoading ? "Loading..." : "Masuk"}
                   </button>
+                  <Link to={"/"} className="button is-ghost mt-1">
+                    Kembali ke Beranda
+                  </Link>
+                </div>
+                <hr class="navbar-divider" />
+                <div className="demo-login">
+                  <div className="columns is-centered">
+                    <div className="column is-6">
+                      <p>
+                        <strong>Akses Masuk Admin :</strong>
+                      </p>
+                      <p>Email : admin@gmail.com</p>
+                      <p>Password : 123456</p>
+                    </div>
+                    <div className="column is-6">
+                      <p>
+                        <strong>Akses Masuk User :</strong>
+                      </p>
+                      <p>Email : user@gmail.com</p>
+                      <p>Password : 123456</p>
+                    </div>
+                  </div>
                 </div>
               </form>
             </div>
