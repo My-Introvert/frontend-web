@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { IoPerson, IoBook, IoHome, IoLogOut } from "react-icons/io5";
+import { IoPerson, IoBook, IoBookOutline, IoHome, IoLogOut, IoBrowsersSharp, IoFilmOutline, IoMic, IoGlobeOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
 
@@ -34,6 +34,11 @@ const Sidebar = () => {
               <IoBook /> Catatan
             </NavLink>
           </li>
+          <li>
+            <NavLink to={"/quesioners"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
+              <IoBrowsersSharp /> Kuisioner
+            </NavLink>
+          </li>
         </ul>
 
         {/* Admin only */}
@@ -44,6 +49,31 @@ const Sidebar = () => {
               <li>
                 <NavLink to={"/users"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
                   <IoPerson /> Pengguna
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/blogs"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
+                  <IoBook /> Artikel
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/videos"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
+                  <IoFilmOutline /> Vidio
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/podcasts"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
+                  <IoMic /> Podcast
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/books"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
+                  <IoBookOutline /> Saran Buku
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/news/list"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
+                  <IoGlobeOutline /> Berita
                 </NavLink>
               </li>
             </ul>

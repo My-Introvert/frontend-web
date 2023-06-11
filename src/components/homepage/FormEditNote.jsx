@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
+import { IoArrowUndo } from "react-icons/io5";
 
 const FormEditNote = () => {
   const [title, setTitle] = useState("");
@@ -33,7 +34,7 @@ const FormEditNote = () => {
         title: title,
         sumarry: sumarry,
       });
-      navigate("/notes");
+      navigate("/dasbor");
     } catch (error) {
       if (error.message) {
         setMsg(error.response.data.msg);
@@ -43,11 +44,15 @@ const FormEditNote = () => {
 
   return (
     <div>
-      <h1 className="title">Catatan</h1>
-      <h2 className="subtitle">Perbarui Catatan</h2>
+      <h2 className="title is-4 has-text-centered mt-6">
+        <Link to={"/dasbor"}>
+          <IoArrowUndo className="subtitle" title="Kembali" />
+        </Link>
+        &nbsp; Perbarui Catatan Kamu
+      </h2>
 
-      <div className="columns is-centered mt-6">
-        <div className="column is-10">
+      <div className="columns is-centered">
+        <div className="column is-6">
           <div className="card is-shadowless">
             <div className="card-content">
               <div className="content">

@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { IoPencil } from "react-icons/io5";
 
@@ -21,7 +21,7 @@ const CoverProfile = () => {
         <p className="title is-4">{user && user.firstName + " " + user.lastName}</p>
         <p className="subtitle is-6">Web Developer | Content Creators | Digital Marketer</p>
         <p className="subtitle is-6 mt-min">Surel : {user && user.email}</p>
-        <Link className="button is-small edit-bio">
+        <Link to={`/user/edit/${user && user.uuid}`} className="button is-small edit-bio">
           Ubah Bio &nbsp;
           <IoPencil />
         </Link>

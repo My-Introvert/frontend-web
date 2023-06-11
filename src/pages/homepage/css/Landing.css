@@ -21,6 +21,43 @@ a.navbar-item:hover p {
   color: #48c78e !important;
 }
 
+.about-img {
+  margin-top: 80px !important;
+  text-align: justify;
+}
+.about-img img {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.about-text {
+  text-align: justify;
+}
+
+.maps-title {
+  margin-top: 100px !important;
+}
+.maps-title p {
+  margin-top: -15px;
+}
+.sosmed {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.sosmed .icon {
+  color: #48c78e;
+}
+.sosmed .icon:hover {
+  color: #349c6d;
+}
+.maps-address iframe {
+  width: 100%;
+  height: 500px;
+}
+
 .img-home {
   margin-right: 5px;
   border-radius: 100%;
@@ -58,6 +95,18 @@ a.navbar-item:hover p {
   height: 250px;
   margin-top: 50px;
 }
+.card {
+  transition: all 0.4s;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card p.title {
+  transition: all 0.3s;
+}
+.card:hover p.title {
+  color: #3bad7a;
+}
 .cover-body {
   display: flex;
   flex-direction: column;
@@ -91,6 +140,13 @@ a.navbar-item:hover p {
   background-color: #fafafa;
   margin-top: 150px;
   padding: 50px;
+}
+.top-footer a {
+  color: #48c78e;
+  transition: all 0.3s;
+}
+.top-footer a:hover {
+  color: #3bad7a;
 }
 .heart-footer {
   color: rgb(201, 4, 47);

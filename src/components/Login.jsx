@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { LoginUser, reset } from "../features/authSlice";
+import { IoArrowBackOutline } from "react-icons/io5";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -53,7 +54,11 @@ const Login = () => {
                     {isLoading ? "Loading..." : "Masuk"}
                   </button>
                   <Link to={"/"} className="button is-ghost mt-1">
+                    <IoArrowBackOutline />
                     Kembali ke Beranda
+                  </Link>
+                  <Link to={"/register"} className="button is-ghost mt-1">
+                    atau Mendaftar ?
                   </Link>
                 </div>
                 <hr class="navbar-divider" />

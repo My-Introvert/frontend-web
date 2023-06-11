@@ -37,6 +37,7 @@ const UserList = () => {
             <th>Nama</th>
             <th>Surel</th>
             <th>Peran</th>
+            <th>Label</th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -51,6 +52,9 @@ const UserList = () => {
               <td>{user.email}</td>
               <td>
                 <span className="tag is-primary is-light">{user.role}</span>
+              </td>
+              <td>
+                <span className="tag is-primary is-light">{user.label}</span>
               </td>
               <td>
                 <Link to={`/users/edit/${user.uuid}`} className="button is-small is-info mr-2 mb-2">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { IoDuplicate } from "react-icons/io5";
+import { IoDuplicate, IoArrowUndo } from "react-icons/io5";
 
 const FormEditUser = () => {
   const [file, setFile] = useState("");
@@ -56,7 +56,7 @@ const FormEditUser = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      navigate("/users");
+      navigate("/dasbor");
     } catch (error) {
       if (error.message) {
         setMsg(error.response.data.msg);
@@ -72,11 +72,14 @@ const FormEditUser = () => {
 
   return (
     <div>
-      <h1 className="title">Pengguna</h1>
-      <h2 className="subtitle">Perbarui Pengguna</h2>
-
-      <div className="columns is-centered mb-6 mt-6">
-        <div className="column is-8">
+      <h2 className="title is-4 has-text-centered mt-6">
+        <Link to={"/dasbor"}>
+          <IoArrowUndo className="subtitle" title="Kembali" />
+        </Link>
+        &nbsp; Perbarui Bio Kamu
+      </h2>
+      <div className="columns is-centered mb-6 mt-3">
+        <div className="column is-6">
           <div className="card is-shadowless">
             <div className="card-content">
               <div className="content">

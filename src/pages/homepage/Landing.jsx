@@ -5,6 +5,9 @@ import { getMe } from "../../features/authSlice";
 import Layout from "./Layout";
 import Hero from "../../components/homepage/Hero";
 import TilesInfo from "../../components/homepage/Tiles";
+import Blog from "../../components/homepage/Blog";
+import Video from "../../components/homepage/Video";
+import Book from "../../components/homepage/Book";
 import "./css/Landing.css";
 
 const LandingPage = () => {
@@ -27,6 +30,9 @@ const LandingPage = () => {
       <Layout>
         <Hero />
         <TilesInfo />
+        <Blog />
+        <Video />
+        <Book />
       </Layout>
     </div>
   );

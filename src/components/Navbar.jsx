@@ -44,12 +44,14 @@ const Navbar = () => {
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-end">
             <div class="navbar-item">
-              <Link to={"/"} className="navbar-item" title="Homepage">
+              <Link to={"/"} className="navbar-item" title="Beranda Web">
                 <IoEarth />
                 <span className="hidden">&nbsp;Situs</span>
               </Link>
               <div className="navbar-item has-dropdown is-hoverable">
-                <button className="button is-white navbar-link">{user && user.firstName + " " + user.lastName}</button>
+                <button className="button is-white navbar-link">
+                  <img src={user && user.urlImage} className="img-home" alt="Profil" /> {user && user.firstName + " " + user.lastName}
+                </button>
                 <div class="navbar-dropdown">
                   <NavLink to={"/users/:id"} className={({ isActive }) => (isActive ? activeMenu : normalMenu)}>
                     <IoPerson />

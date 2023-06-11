@@ -3,3 +3,91 @@
     display: none;
   }
 }
+
+.img-register img {
+  position: absolute;
+  right: 0;
+  /* border-radius: 100%; */
+  border: 4px solid #eaeaea;
+}
+
+.text-small {
+  font-size: 0.7em;
+  margin: -8px 0;
+}
+
+.my-img-center {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+.my-img-center img {
+  border: 5px solid #eaeaea;
+  border-radius: 100%;
+}
+.my-lable {
+  background-color: aquamarine;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+.is-ancestor {
+  padding-right: 12px;
+}
+.is-vertical {
+  max-height: 100vh;
+}
+
+/* WYSIWYG */
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.editor-wrapper {
+  height: 500px;
+}
+.message-toolbar {
+  margin-bottom: 0px;
+  padding: 6px 5px;
+  border-bottom: 1px solid #c4cdd5;
+}
+.message-editor {
+  height: 150px;
+  font-size: 16px;
+  padding: 0 20px;
+  border-bottom: 1px solid #c4cdd5;
+}
+.rdw-option-wrapper {
+  min-width: 35px;
+  height: 30px;
+}
+.html-output {
+  overflow: auto;
+  max-height: 200px;
+  border: 1px solid silver;
+  padding: 20px;
+  background-color: #fafafa;
+  margin-bottom: 30px;
+}
+
+/* ScrollBar */ /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
