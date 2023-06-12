@@ -76,7 +76,7 @@ const FormEditUser = () => {
         <Link to={"/dasbor"}>
           <IoArrowUndo className="subtitle" title="Kembali" />
         </Link>
-        &nbsp; Perbarui Bio Kamu
+        &nbsp; Perbarui Profil
       </h2>
       <div className="columns is-centered mb-6 mt-3">
         <div className="column is-6">

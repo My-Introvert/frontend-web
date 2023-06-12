@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { IoArrowUndoSharp } from "react-icons/io5";
 
 const DetailBlog = () => {
   const [blog, setBlog] = useState([]);

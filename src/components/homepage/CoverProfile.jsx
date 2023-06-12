@@ -22,7 +22,7 @@ const CoverProfile = () => {
         <p className="subtitle is-6">Web Developer | Content Creators | Digital Marketer</p>
         <p className="subtitle is-6 mt-min">Surel : {user && user.email}</p>
         <Link to={`/user/edit/${user && user.uuid}`} className="button is-small edit-bio">
-          Ubah Bio &nbsp;
+          Ubah Profil &nbsp;
           <IoPencil />
         </Link>
       </div>

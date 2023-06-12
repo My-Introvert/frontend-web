@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="columns is-centered has-text-centered maps-title p-mobile-css">
           <div className="column is-10">
             <h1 className="title">Kontak Kami</h1>
-            <p>Berikut adalah beberapa Informasi terkait My Introvert, silahkan hubungi Tim Kami segera jika dibutuhkan, untuk mendapatkan bantuan lebih lanjut. Tim Kami selalu siap 1x24 Jam, Semoga hari hari kamu menyenangkan.</p>
+            <p>Berikut adalah beberapa Informasi kontak terkait My Introvert, silahkan hubungi Tim Kami segera jika dibutuhkan, untuk mendapatkan bantuan lebih lanjut. Tim Kami selalu siap 1x24 Jam, Semoga hari hari kamu menyenangkan.</p>
             <div className="sosmed">
               <Link>
                 <BsInstagram title="Instagram" className="m-2 icon" />

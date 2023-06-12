@@ -29,7 +29,7 @@ const UserList = () => {
       <Link to={"/users/add"} className="button is-success mb-3">
         <IoDuplicate /> &nbsp; Tambah Baru
       </Link>
-      <table className="table is-striped is-fullwidth">
+      <table className="table is-striped is-fullwidth mb-6">
         <thead>
           <tr>
             <th>No.</th>

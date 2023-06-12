@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { IoDuplicate, IoPencil, IoTrash, IoEyeSharp, IoBagCheckSharp } from "react-icons/io5";
+import { IoDuplicate, IoPencil, IoTrash, IoBagCheckSharp } from "react-icons/io5";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -29,7 +29,7 @@ const BookList = () => {
       <Link to={"/books/add"} className="button is-success mb-3">
         <IoDuplicate /> &nbsp; Tambah Baru
       </Link>
-      <table className="table is-striped is-fullwidth">
+      <table className="table is-striped is-fullwidth mb-6">
         <thead>
           <tr>
             <th>No.</th>

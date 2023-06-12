@@ -138,7 +138,7 @@ const FormAddBlog = () => {
                   <div className="field">
                     <div className="control">
                       <button type="submit" className="button is-success">
-                        Perbarui
+                        Simpan
                       </button>
                     </div>
                   </div>
