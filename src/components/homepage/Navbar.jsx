@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
             <p className="title is-4 title-navbar">

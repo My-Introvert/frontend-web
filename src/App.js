@@ -28,6 +28,7 @@ import Profile from "./pages/Profile";
 
 // Homepage
 import Landing from "./pages/homepage/Landing";
+import PageDetailBlog from "./pages/homepage/PageDetailBlog";
 import Dasbor from "./pages/homepage/Dashboard";
 import AddNoteUser from "./pages/homepage/AddNote";
 import EditNoteUser from "./pages/homepage/EditNote";
@@ -42,6 +43,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/blogs/detail/:id" element={<PageDetailBlog />} />
           <Route path="/dasbor" element={<Dasbor />} />
           <Route path="/user/edit/:id" element={<EditPageUser />} />
           <Route path="/user/notes/add" element={<AddNoteUser />} />

@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div>
       <Layout>
-        <div className="columns is-centered has-text-centered maps-title">
+        <div className="columns is-centered has-text-centered maps-title p-mobile-css">
           <div className="column is-10">
             <h1 className="title">Kontak Kami</h1>
             <p>Berikut adalah beberapa Informasi terkait My Introvert, silahkan hubungi Tim Kami segera jika dibutuhkan, untuk mendapatkan bantuan lebih lanjut. Tim Kami selalu siap 1x24 Jam, Semoga hari hari kamu menyenangkan.</p>
@@ -33,7 +33,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="columns is-centered maps-address">
+        <div className="columns is-centered maps-address p-mobile-css">
           <div className="column is-10">
             <div className="container">
               <iframe

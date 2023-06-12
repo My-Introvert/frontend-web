@@ -15,7 +15,8 @@ const News = () => {
         <div class="tile is-ancestor tile-service pl-6 pr-6 mt-1">
           <div class="tile is-parent">
             <Link>
-              <div class="card p-3">
+              <div class="card section-content p-3">
+                <span className="content-label">Not-Label</span>
                 <div class="card-image">
                   <figure class="image is-4by3">
                     <img src="https://uploads-ssl.webflow.com/614836791e40b065edfe427b/628346ac4b1bd6d1b8963376_Tips%20Bekerja%20dalam%20Tim%20Untuk%20Kamu%20yang%20Introvert.jpg" alt="Gambar" />
@@ -28,7 +29,8 @@ const News = () => {
           </div>
           <div class="tile is-parent">
             <Link>
-              <div class="card p-3">
+              <div class="card section-content p-3">
+                <span className="content-label">Not-Label</span>
                 <div class="card-image">
                   <figure class="image is-4by3">
                     <img src="https://uploads-ssl.webflow.com/614836791e40b065edfe427b/628346ac4b1bd6d1b8963376_Tips%20Bekerja%20dalam%20Tim%20Untuk%20Kamu%20yang%20Introvert.jpg" alt="Gambar" />
@@ -41,7 +43,8 @@ const News = () => {
           </div>
           <div class="tile is-parent">
             <Link>
-              <div class="card p-3">
+              <div class="card section-content p-3">
+                <span className="content-label">not-label</span>
                 <div class="card-image">
                   <figure class="image is-4by3">
                     <img src="https://uploads-ssl.webflow.com/614836791e40b065edfe427b/628346ac4b1bd6d1b8963376_Tips%20Bekerja%20dalam%20Tim%20Untuk%20Kamu%20yang%20Introvert.jpg" alt="Gambar" />

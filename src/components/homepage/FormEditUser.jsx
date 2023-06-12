@@ -72,7 +72,7 @@ const FormEditUser = () => {
 
   return (
     <div>
-      <h2 className="title is-4 has-text-centered mt-6">
+      <h2 className="title is-4 has-text-centered mt-6 mb-6">
         <Link to={"/dasbor"}>
           <IoArrowUndo className="subtitle" title="Kembali" />
         </Link>
@@ -133,34 +133,6 @@ const FormEditUser = () => {
                     <label className="label">Konfirmasi Kata Sandi</label>
                     <div className="control">
                       <input type="password" className="input" value={confPassword} onChange={(e) => setConfPassword(e.target.value)} placeholder="******" />
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label className="label">Label</label>
-                    <div className="control">
-                      <div className="select is-fullwidth">
-                        <select value={label} onChange={(e) => setLabel(e.target.value)}>
-                          <option value="choose">-- Pilih --</option>
-                          <option value="not-label">Not-Label</option>
-                          <option value="social-introvert">Social Introvert</option>
-                          <option value="thinking-introvert">Thinking Introvert</option>
-                          <option value="anxious-introvert">Anxious Introvert</option>
-                          <option value="restrained-introvert">Restrained Introvert</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label className="label">Role</label>
-                    <div className="control">
-                      <div className="select is-fullwidth">
-                        <select value={role} onChange={(e) => setRole(e.target.value)}>
-                          <option value="choose">-- Pilih --</option>
-                          <option value="admin">Admin</option>
-                          <option value="editor">Editor</option>
-                          <option value="user">User</option>
-                        </select>
-                      </div>
                     </div>
                   </div>
                   <div className="field">

@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.iframe-yt {
+  width: 100% !important;
+  height: 210px;
+}
+
 .demo-login {
   text-align: center;
 }
@@ -21,6 +32,28 @@ a.navbar-item:hover p {
   color: #48c78e !important;
 }
 
+.my-label {
+  background-color: #eaeaea;
+  font-weight: 500;
+  padding: 5px;
+}
+.my-label-color {
+  background-color: #48c78e;
+  font-weight: 500;
+  padding: 4px 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+.section-about {
+  margin-top: 90px !important;
+}
+.section-about p.desc-about {
+  text-align: justify;
+  line-height: 1.8em;
+  font-weight: 400;
+}
 .about-img {
   margin-top: 80px !important;
   text-align: justify;
@@ -84,6 +117,21 @@ a.navbar-item:hover p {
 
 .hero-title {
   line-height: 55px !important;
+}
+
+.section-content {
+  position: relative;
+}
+.content-label {
+  position: absolute;
+  background-color: #209cee;
+  padding: 4px 10px;
+  left: 0;
+  top: 0px;
+  color: #efefef;
+  border-bottom-right-radius: 15px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .my-cover {
@@ -177,6 +225,11 @@ a.navbar-item:hover p {
   }
   .title-navbar {
     margin-left: 5px !important;
+  }
+}
+@media only screen and (max-width: 765px) {
+  .p-mobile-css {
+    padding: 20px;
   }
 }
 @media only screen and (max-width: 600px) {
